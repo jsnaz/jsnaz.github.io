@@ -1,4 +1,5 @@
 @import (reference) './mixins.less';
+
 body{
   font-size: 15px;
 }
@@ -65,9 +66,31 @@ ul{
     }
     &::after {
         background-color: #FF965D;
-        width: 1rem;
+        width: 3rem;
       }
 }
+.aboutText {
+  margin: 0;
+}
+
+.funFacts {
+  margin-top: 1.8rem;
+}
+
+.skillsContainer {
+  margin-top: 4rem;
+
+  h2 {
+    line-height: 0px;
+  }
+
+  .skillsWidget {
+    margin-top: 0rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
 .centerAlign{
     .flex-center();
 }

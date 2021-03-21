@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Row, Col } from 'antd';
 import AboutTile from '../../AbouTile';
-import { stripTags, domHtml } from '../../../utils/stripTags';
-
+import { stripTags } from '../../../utils/stripTags';
 import SEO from '../../Seo';
+import { pageText, funFactsData } from './about.data';
 
-const pageText = {
-  paraOne: `Hello my name is Jenelyn Nazareno. I have more than 5 years of experience as a Business Developer 
-  and have been an entrepreneur for 4 years. I am a Data Analyst passionate about turning data into business insights.
-   I am currently studying for a Masters Degree in Artificial Intelligence will allow me to develop a dual skill, both operational 
-   (project management, marketing & communication) and technical (Data Mining, Machine Learning, Statistics, Programming)`,
-  
-   paraTwo: `Currently I work mostly on some personal projects  I'm always a learner and a self taught programmer.`,
-};
+const isMobile = window.innerWidth < 758;
+const mobileMultiRatio = 1.2;
+
+const makeParagraph = (text) => text.split('\n').map((line) => <p className="aboutText">{line}</p>);
+const makeFunFacts = (funFacts) => funFacts.map((funFact) => (
+  <Fragment key={funFact.id}>
+    <Col xs={24} sm={24} md={12} lg={8}>
+      <AboutTile
+        img={funFact.img}
+        height={isMobile ? funFact.imgSize * mobileMultiRatio : funFact.imgSize}
+        alt="location image"
+        textH4={funFact.topLine}
+        textH3={funFact.bottomLine}
+      />
+    </Col>
+  </Fragment>
+));
 
 const AboutMe = () => {
   const description = `${pageText.paraOne} ${stripTags(pageText.paraTwo)}`;
@@ -26,66 +35,17 @@ const AboutMe = () => {
           keywords={['Rolwin', 'Reevan', 'Monteiro', 'FullStack developer', 'Javascript', 'ReactJS', 'NodeJS', 'Gatsby']}
         />
         <h1 className="titleSeparate">About Me</h1>
-        <p>
-          {pageText.paraOne}
-        </p>
-        <p dangerouslySetInnerHTML={domHtml(pageText.paraTwo)} />
+        {makeParagraph(pageText.paraOne)}
+        <br />
+        {makeParagraph(pageText.paraTwo)}
       </div>
-      <Row gutter={[20, 20]}>
-        <Col xs={24} sm={24} md={12} lg={8}>
-          <AboutTile
-            img="location.png"
-            height={60}
-            alt="location image"
-            textH4="Born and bought up in"
-            textH3="Mangalore, KA, India"
-          />
-        </Col>
-        <Col xs={24} sm={24} md={12} lg={8}>
-          <AboutTile
-            img="coffee.png"
-            alt="coffee image"
-            textH4="Love Coffee"
-            textH3="Coffee + Me = Happiness"
-          />
-        </Col>
-        <Col xs={24} sm={24} md={12} lg={8}>
-          <AboutTile
-            img="meeting.png"
-            alt="meeting image"
-            textH4="Socially Awkward"
-            textH3="At times"
-          />
-        </Col>
-        <Col xs={24} sm={24} md={12} lg={8}>
-          <AboutTile
-            img="motorcycle.png"
-            alt="motorcycle image"
-            textH4="Love Riding"
-            textH3="Biker for life"
-          />
-        </Col>
-        <Col xs={24} sm={24} md={12} lg={8}>
-          <AboutTile
-            img="web.png"
-            alt="web image"
-            textH4="Self Taught Programmer"
-            textH3="Thanks to the Web Resources"
-            height={60}
-            width={60}
-          />
-        </Col>
-        <Col xs={24} sm={24} md={12} lg={8}>
-          <AboutTile
-            img="graduation.png"
-            alt="graduation image"
-            textH4="Pursued B.Tech in"
-            textH3="Computer Science"
-            height={60}
-            width={60}
-          />
-        </Col>
-      </Row>
+
+      <div className="funFacts">
+
+        <Row gutter={[20, 20]}>
+          {makeFunFacts(funFactsData)}
+        </Row>
+      </div>
     </>
   );
 };
