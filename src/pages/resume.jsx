@@ -38,7 +38,7 @@ export default class Resume extends Component {
           path="resume"
         />
         <Document
-          file="../resume.pdf"
+          file="docs/resume.pdf"
           onLoadSuccess={this.onDocumentLoadSuccess}
         >
           <Page pageNumber={pageNumber} />
