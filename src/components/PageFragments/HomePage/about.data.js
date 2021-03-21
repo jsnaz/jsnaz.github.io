@@ -19,7 +19,7 @@ export const funFactsData = [
   {
     id: 2,
     topLine: 'New technologies',
-    bottomLine: 'Learning new langagues & tools',
+    bottomLine: 'Learning new languagues & tools',
     img: 'img/fun-facts/tech.png',
     imgSize: 60,
   },
