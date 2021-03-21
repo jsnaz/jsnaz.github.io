@@ -26,7 +26,7 @@ const Contact = () => (
           <Col sm={24} md={24} lg={12}>
             <img
               src="contact.png"
-              alt="contact"
+              alt="img/contact"
               className="widthFull contactImgBorder"
             />
           </Col>
