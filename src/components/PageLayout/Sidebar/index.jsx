@@ -11,9 +11,7 @@ import { useWindowSize } from '../../../utils/hooks';
 import Config from '../../../../config';
 
 const { Content } = Layout;
-const {
-  github, instagram, linkedIn
-} = Config.social;
+const { github, instagram, linkedIn } = Config.social;
 
 const DomContent = () => (
   <aside>
@@ -38,7 +36,7 @@ const DomContent = () => (
             <FeatherIcon size="19" icon="calendar" />
             {' '}
           </span>
-          &nbsp; &nbsp; 
+          &nbsp;&nbsp;
           {Config.authorInfo.birthdate}
         </li>
         <li className={`${style.contactBlockItem}`}>
