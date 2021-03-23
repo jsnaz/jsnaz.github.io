@@ -24,6 +24,11 @@ excerpt: Data was from an Audiobook provider selling at an online market place. 
 
 }
 
+.sales-mindmap {
+    background-color: blue;
+    width: 300px;
+}
+
 .tg {
     border-collapse:collapse;
     border-spacing:0;
@@ -185,3 +190,9 @@ Those potential questions are listed in the two mindmap diagrams bellow
     <img src="Reviews_mindmap.png" />
     <figcaption style="text-align: center;">Fig.1 - Business questins about the reviews data</figcaption>
 </figure>
+
+
+<!-- <figure> -->
+<img class="sales-mindmap" width=300 src="Purchase_mindmap.png" />
+    <!-- <figcaption style="text-align: center;">Fig.1 - Business questins about the sales data</figcaption>
+</figure> -->
