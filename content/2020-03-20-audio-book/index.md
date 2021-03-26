@@ -185,3 +185,10 @@ Those potential questions are listed in the two mindmap diagrams bellow
     <img src="Reviews_mindmap.png" />
     <figcaption style="text-align: center;">Fig.1 - Business questins about the reviews data</figcaption>
 </figure>
+
+<figure>
+    <img src="Purchase_mindmap.png" />
+    <figcaption style="text-align: center;">Fig.1 - Business questins about the reviews data</figcaption>
+</figure>
+
+<img width="300px" src="https://www.envedette.ca/image/policy:1.14030253:1606335432/Jennifer-Lopez.jpg?w=1024&$p$w=3536c92" />
