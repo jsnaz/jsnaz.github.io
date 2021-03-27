@@ -175,7 +175,7 @@ WHERE Date_of_Purchase REGEXP '^[0-9]{5}$'
 
 
 ### Dashboard
-Using Tableau, I created a dashboard that would allow the management team to learn if the number of reviews the company receives has been growing.  This also gives an at a glance snapshot of how the average review scores change overtime, the percentage breakdown of the type of reviews, and the percentage of people acquiring an audio who left a review.
+Using Tableau, I created a dashboard that would allow the management team to learn if the number of reviews the company receives has been growing.  This also gives an at a glance snapshot of how the average review scores change overtime, the percentage breakdown of the type of reviews, and the percentage of people acquiring an audio book who left a review.
 
 ### Business Insights
 The dashboard provides insights about the reviews and sales business questions a business person could have.
