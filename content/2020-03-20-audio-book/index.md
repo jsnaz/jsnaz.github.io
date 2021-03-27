@@ -1,7 +1,7 @@
 ---
 title: "Audiobook Dashboard"
 path: projects/audio-book
-tags: [javascript, html,css]
+tags: [SQL, Tableau]
 cover: ./History-of-Audiobooks.png
 date: 2018-12-20
 excerpt: Data was from an Audiobook provider selling at an online market place. Data is composed of the information on sales and reviews that we'll use to determine its correlation and how average review change overtime.
@@ -57,8 +57,9 @@ excerpt: Data was from an Audiobook provider selling at an online market place. 
 </style>
 
 ## Dashboard
-❗ *Please feel free to click to the following button at the bottom right of the dashboard to see it in fullscreen.*
-<iframe src="https://public.tableau.com/views/RateofUKHospitalAdmissionsforMentalHealthDisordersAmongResidentsUnderAge18ProjectHealthViz/11AbouttheData?:language=fr&:display_count=y&mobile=&:toolbar=n&:origin=viz_share_link" allowfullscreen width="100%" height="600"></iframe>
+❗ **Please feel free to click the fullscreen button at the bottom right of the dashboard to see it in fullscreen.**
+<iframe src="https://public.tableau.com/views/AudiobookProject/Dashboard1?:showVizHome=no&:embed=true" width="850" height="600" allowfullscreen="true"></iframe> 
+
 
 ## Context of the Project
 
@@ -183,12 +184,10 @@ Those potential questions are listed in the two mindmap diagrams bellow
 
 <figure>
     <img src="Reviews_mindmap.png" />
-    <figcaption style="text-align: center;">Fig.1 - Business questins about the reviews data</figcaption>
+    <figcaption style="text-align: center;">Fig.1 - Business questions about the reviews data</figcaption>
 </figure>
 
 <figure>
     <img src="Purchase_mindmap.png" />
-    <figcaption style="text-align: center;">Fig.1 - Business questins about the reviews data</figcaption>
+    <figcaption style="text-align: center;">Fig.1 - Business questions about the sales data</figcaption>
 </figure>
-
-<img width="300px" src="https://www.envedette.ca/image/policy:1.14030253:1606335432/Jennifer-Lopez.jpg?w=1024&$p$w=3536c92" />

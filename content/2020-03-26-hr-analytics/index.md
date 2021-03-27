@@ -1,8 +1,8 @@
 ---
-title: "Audiobook Dashboard"
-path: projects/audio-book
-tags: [javascript, html,css]
-cover: ./History-of-Audiobooks.png
+title: "HR Analytics"
+path: projects/hr-analytics
+tags: [SQL, Tableau]
+cover: ./cover.png
 date: 2018-12-20
 excerpt: Data was from an Audiobook provider selling at an online market place. Data is composed of the information on sales and reviews that we'll use to determine its correlation and how average review change overtime.
 ---
