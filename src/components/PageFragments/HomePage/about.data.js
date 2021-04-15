@@ -32,10 +32,10 @@ export const funFactsData = [
   },
   {
     id: 4,
-    topLine: 'Born and bought up in',
-    bottomLine: 'Cebu, Philippines',
-    img: 'img/fun-facts/location.png',
-    imgSize: 60,
+    topLine: 'Love speaking languages',
+    bottomLine: 'French, English, Chinese, Filipino',
+    img: 'img/fun-facts/languages.png',
+    imgSize: 70,
   },
   {
     id: 5,
