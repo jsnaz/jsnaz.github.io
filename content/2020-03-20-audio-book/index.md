@@ -3,7 +3,7 @@ title: "Audiobook Dashboard"
 path: projects/audio-book
 tags: [SQL, Tableau]
 cover: ./History-of-Audiobooks.png
-date: 2020-03-20
+date: 2021-03-28
 excerpt: Data was from an Audiobook provider selling at an online market place. Data is composed of the information on sales and reviews that we'll use to determine its correlation and how average review change overtime.
 ---
 
