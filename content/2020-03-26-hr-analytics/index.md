@@ -6,9 +6,57 @@ cover: ./cover.png
 date: 2020-03-26
 excerpt: For this project, we used and modified a huge employee data set that was found on github. The dashboard creates a visualization that provides a breakdown between male and female employees working in the company for each year from 1990 as well as their annual average salary. Furthermore, Comparison between the number of male and female managers from different departments per year is also shown in this dashboard.
 ---
+
+<style type="text/css">
+
+.tg {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.tg td {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	overflow: hidden;
+	padding: 10px 5px;
+	word-break: normal;
+}
+
+.tg th {
+	border-color: black;
+	border-style: solid;
+	border-width: 1px;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	overflow: hidden;
+	padding: 10px 5px;
+	word-break: normal;
+}
+
+.tg .tg-1wig {
+	font-weight: bold;
+	text-align: left;
+	vertical-align: top
+}
+
+.tg .tg-0lax {
+	text-align: left;
+	vertical-align: top
+}
+
+</style>
+
 ##Dashboard
 
 This dashboard creates a visualization that provides a breakdown between male and female employees working in the company for each year from 1990 as well as their annual average salary. The comparison between the number of male and female managers from different departments per year is also shown in this dashboard.
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" width="18px"/>
+Code on GitHub: <a href="https://github.com/jsnaz/hr-analytics">https://github.com/jsnaz/hr-analytics</a> 
+<br><br>
 
 ❗ **Please feel free to click the fullscreen button at the bottom right of the dashboard to see it in fullscreen.**
 <iframe src="https://public.tableau.com/views/Employees_16162571419100/Dashboard1?:showVizHome=no&:embed=true" width="850" height="600" allowfullscreen="true"></iframe> 
@@ -65,14 +113,91 @@ ORDER BY dm.emp_no, calendar_year;
 
 The breakdown of total number of female and male managers from different departments throughout the year is as follows using the code below.
 
- #show table and code
+<table class="tg" style="margin-left: auto; margin-right: auto;">
+    <thead>
+    <tr>
+        <th class="tg-1wig">dept_name</th>
+        <th class="tg-1wig">total_managers</th>
+        <th class="tg-1wig">male_total_managers</th>
+        <th class="tg-1wig">female_total_managers</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="tg-0lax">Marketing</td>
+        <td class="tg-0lax">14</td>
+        <td class="tg-0lax">8</td>
+        <td class="tg-0lax">6</td>
+    </tr>
+    <tr>
+        <td class="tg-0lax">Finance</td>
+        <td class="tg-0lax">15</td>
+        <td class="tg-0lax">11</td>
+        <td class="tg-0lax">4</td>
+    </tr>
+    <tr>
+        <td class="tg-0lax">Human Resources</td>
+        <td class="tg-0lax">14</td>
+        <td class="tg-0lax">8</td>
+        <td class="tg-0lax">6</td>
+    </tr>
+    <tr>
+        <td class="tg-0lax">Production</td>
+        <td class="tg-0lax">14</td>
+        <td class="tg-0lax">11</td>
+        <td class="tg-0lax">3</td>
+    </tr>
+    <tr>
+        <td class="tg-0lax">Development</td>
+        <td class="tg-0lax">14</td>
+        <td class="tg-0lax">7</td>
+        <td class="tg-0lax">7</td>
+    </tr>
+    <tr>
+        <td class="tg-0lax">Quality Management</td>
+        <td class="tg-0lax">19</td>
+        <td class="tg-0lax">11</td>
+        <td class="tg-0lax">8</td>
+    </tr>
+    <tr>
+        <td class="tg-0lax">Sales</td>
+        <td class="tg-0lax">19</td>
+        <td class="tg-0lax">14</td>
+        <td class="tg-0lax">5</td>
+    </tr>
+    <tr>
+        <td class="tg-0lax">Research</td>
+        <td class="tg-0lax">13</td>
+        <td class="tg-0lax">8</td>
+        <td class="tg-0lax">5</td>
+    </tr>
+    <tr>
+        <td class="tg-0lax">Customer Service</td>
+        <td class="tg-0lax">22</td>
+        <td class="tg-0lax">10</td>
+        <td class="tg-0lax">12</td>
+    </tr>
+    </tbody>
+</table>
 
+<br>
+
+```sql
+SELECT
+dept_name,
+    COUNT(ee.emp_no) AS "total_managers",
+SUM(IF(gender = "M", 1, 0)) AS "male_total_managers",
+SUM(IF(gender = "F", 1, 0)) AS "female_total_managers"
+FROM t_employees ee
+JOIN t_dept_manager dm ON ee.emp_no = dm.emp_no
+JOIN t_departments d ON d.dept_no = dm.dept_no
+GROUP BY dept_name;
+```
 
 ### Average salary of female versus male employees in the entire company until year 2002
+You may compare the average salary of male versus female employees in the entire company until 2002 using the third chart. A filter was added allowing to show the result per department. Over the years, the annual average salary of male employees ranges from $51,000 to $67,000 while female employees are from $50,000 to $62,000.
+
 ```sql
-You may compare the average salary of male versus female employees in the entire company until 2002 using the third chart. A filter was added allowing to show the result per department. Over the years, the annual average salary of male employees ranges from $51,000 to $67,000 while female employees are from $50,000 tà $62,000.
-
-
 #Problem 3: Compare the average salary of female versus male employees in the entire company until year 2002
 # add a filter allowing to show result per each department
 SELECT 
@@ -105,7 +230,7 @@ Lastly, using the  filter allows you to see categorized results by department. -
 
 ##Data
 
-For this project, we used and modified a huge employee data set that was found on github. The database script has been re-organized in an SQL file that can be downloaded and run. Below is the code that creates the entire database from the first to the last piece. 
+For this project, we used and modified a huge employee dataset that was found on github. The database script has been re-organized in an SQL file that can be downloaded and run. Below is the code that creates the entire database from the first to the last piece. 
 
 ```sql
 CREATE TABLE t_employees (
@@ -150,4 +275,5 @@ CREATE TABLE t_salaries (
 );
 ```
 
-<!-- Here are the following columns in the employee database with the respective schema. -->
+Here is the database tables architecture for this project.
+<img src="database_architecture.png"/>

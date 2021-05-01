@@ -7,7 +7,7 @@ date: 2021-03-28
 excerpt: Data was from an Audiobook provider selling at an online market place. Data is composed of the information on sales and reviews that we'll use to determine its correlation and how average review change overtime.
 ---
 
-<style type="text/css">é"'(§o)
+<style type="text/css">
 
 .multi_figure {
     display: flex;
