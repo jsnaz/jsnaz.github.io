@@ -4,7 +4,7 @@ path: projects/hr-analytics
 tags: [SQL, Tableau]
 cover: ./cover.png
 date: 2020-03-26
-excerpt: Data was from an Audiobook provider selling at an online market place. Data is composed of the information on sales and reviews that we'll use to determine its correlation and how average review change overtime.
+excerpt: For this project, we used and modified a huge employee data set that was found on github. The dashboard creates a visualization that provides a breakdown between male and female employees working in the company for each year from 1990 as well as their annual average salary. Furthermore, Comparison between the number of male and female managers from different departments per year is also shown in this dashboard.
 ---
 ##Dashboard
 
