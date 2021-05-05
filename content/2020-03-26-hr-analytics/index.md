@@ -184,7 +184,7 @@ The breakdown of total number of female and male managers from different departm
 
 ```sql
 SELECT
-dept_name,
+    dept_name,
     COUNT(ee.emp_no) AS "total_managers",
 SUM(IF(gender = "M", 1, 0)) AS "male_total_managers",
 SUM(IF(gender = "F", 1, 0)) AS "female_total_managers"
@@ -222,11 +222,21 @@ ORDER BY d.dept_no;
 The fourth chart displays the average annual salary of employees by the prospective departments.  Employees from the Sales Department receive the highest average annual salary among the other departments with an average of $71,277 for females and $72,609 for males. While the Human Resource Department receives the least annual average salary with an average of $59,868 and $60,190 for females and males respectively.
 
 
-<!-- Furthermore, an SQL stored procedure was created to allow you to obtain the average male and female salary per department within a certain salary range (excluding those who earned less than $50,000  and not greater than  $90,000). 
+Furthermore, the following SQL code was used to obtain the average male and female salary per department within a certain salary range (excluding those who earned less than $50,000  and not greater than  $90,000). 
 
--code problem 4-
 
-Lastly, using the  filter allows you to see categorized results by department. -->
+```sql
+SELECT
+    ee.gender, 
+    d.dept_name, 
+    ROUND(AVG(s.salary), 2) AS avg_salary
+FROM employees_mod.t_salaries s
+JOIN employees_mod.t_employees ee ON s.emp_no = ee.emp_no
+JOIN employees_mod.t_dept_emp de ON ee.emp_no = de.emp_no
+JOIN t_departments d ON de.dept_no = d.dept_no
+WHERE s.salary BETWEEN 50000 AND 90000
+GROUP BY d.dept_no, ee.gender;
+```
 
 ##Data
 
