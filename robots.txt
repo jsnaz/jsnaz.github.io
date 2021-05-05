@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://jsnaz.github.io/sitemap.xml
+Host: https://jsnaz.github.io
